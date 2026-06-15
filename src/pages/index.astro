@@ -1,0 +1,281 @@
+---
+import '../styles/global.css';
+---
+
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Vteca | Tu Videoteca Institucional Inteligente</title>
+    <!-- Script moderno para animaciones .lottie -->
+<script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" is:inline></script>
+  </head>
+  <body class="bg-slate-950 text-slate-50 font-sans antialiased selection:bg-blue-500/30 overflow-x-hidden">
+    
+    <!-- Fondo Animado Abstracto (Webflow Style) -->
+    <div class="fixed inset-0 z-0 pointer-events-none opacity-40">
+      <div class="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-blue-600/20 blur-[120px] animate-pulse"></div>
+      <div class="absolute bottom-[-20%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-indigo-600/20 blur-[120px] animate-pulse" style="animation-delay: 2s;"></div>
+    </div>
+
+    <!-- Contenedor principal con Z-index para estar sobre el fondo -->
+    <div class="relative z-10" id="mouse-tracker-container">
+      
+      <!-- Navegación Superior -->
+      <nav class="w-full flex justify-between items-center px-8 py-6 max-w-7xl mx-auto border-b border-white/5 backdrop-blur-md">
+        <div class="text-2xl font-bold tracking-tighter text-white">
+          vteca<span class="text-blue-500">.</span>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">La Videoteca</a>
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Casos de Uso</a>
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Precios</a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Ingresar</a>
+          <a href="#" class="text-sm font-medium px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors shadow-[0_0_20px_rgba(37,99,235,0.3)] border border-blue-500/50">
+            Desplegar ahora
+          </a>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <main class="max-w-7xl mx-auto px-8 pt-20 pb-24 grid lg:grid-cols-2 gap-12 items-center">
+        
+        <!-- Columna Izquierda: Copywriting -->
+        <div>
+          <div class="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-sm font-medium text-blue-300 mb-6 backdrop-blur-sm">
+            <span class="flex h-2 w-2 rounded-full bg-blue-400 mr-2 animate-ping"></span>
+            Nuevos conocimiento al servicio.
+          </div>
+          
+          <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-balance leading-tight text-white">
+            Tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Videoteca</span> Institucional Inteligente
+          </h1>
+          
+          <p class="text-lg text-slate-400 max-w-xl mb-8 text-balance leading-relaxed">
+            Las plataformas tradicionales solo almacenan videos. Vteca te permite capturar conferencias, <strong class="text-slate-200">registrar metadatos académicos, categorizar e indexar</strong> todo tu acervo audiovisual en tu propio sistema.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <button class="px-8 py-4 bg-white text-slate-950 font-semibold rounded-xl shadow-lg hover:scale-105 transition-transform duration-200">
+              Crear mi Videoteca
+            </button>
+            <button class="px-8 py-4 bg-white/5 text-white font-semibold rounded-xl border border-white/10 hover:bg-white/10 transition-colors duration-200 backdrop-blur-sm">
+              Ver arquitectura
+            </button>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Animación Lottie (Formato .lottie) -->
+		<div class="relative w-full h-[400px] flex justify-center items-center rounded-2xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 backdrop-blur-md shadow-2xl overflow-hidden">
+		<dotlottie-player 
+			class="mix-blend-screen"
+			src="https://lottie.host/1ec6011c-1a99-4ef9-a419-1a13a6c5994e/RP9QyXa8JA.lottie" 
+			background="transparent" 
+			speed="1" 
+			style="width: 120%; height: 120%;" 
+			loop 
+			autoplay>
+		</dotlottie-player>
+		</div>
+
+      </main>
+
+      <!-- Sección de Características con Mouse Tracking -->
+      <section class="max-w-7xl mx-auto px-8 pb-32">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-white mb-4">El ciclo de vida del conocimiento</h2>
+          <p class="text-slate-400">Mucho más que un servicio VOD. Una solución integral para bibliotecas y universidades.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          
+          <!-- Card 1 -->
+          <div class="glow-card p-8 rounded-2xl">
+            <div class="h-12 w-12 rounded-lg bg-blue-500/20 border border-blue-500/50 flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Captura Universal</h3>
+            <p class="text-slate-400 text-sm">Integra desde smartphones hasta circuitos CCTV avanzados mediante tecnología WebRTC de ultrabaja latencia.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="glow-card p-8 rounded-2xl">
+            <div class="h-12 w-12 rounded-lg bg-indigo-500/20 border border-indigo-500/50 flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Indexación y Metadata</h3>
+            <p class="text-slate-400 text-sm">Clasifica cada audiovisual con rigor institucional. Generación de identificadores, catalogación de autores y conexión con Zenodo.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="glow-card p-8 rounded-2xl">
+            <div class="h-12 w-12 rounded-lg bg-purple-500/20 border border-purple-500/50 flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Tu Propio Portal</h3>
+            <p class="text-slate-400 text-sm">Sirve el contenido a tu comunidad en un subdominio personalizado (tuinstitucion.vteca.lat) con controles de acceso privados.</p>
+          </div>
+
+        </div>
+      </section>
+
+	  <!-- Sección de Planes y Suscripciones -->
+      <section class="max-w-7xl mx-auto px-8 pb-32">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-white mb-4">Planes diseñados para cada institución</h2>
+          <p class="text-slate-400">Escala tu sistema de videoteca a medida que crece tu acervo audiovisual.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          
+          <!-- Plan Gratuito (MVP) -->
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+            <h3 class="text-xl font-semibold text-white mb-2">Básico</h3>
+            <p class="text-sm text-slate-400 mb-6">Para proyectos iniciales y pruebas de concepto.</p>
+            <div class="mb-6">
+              <span class="text-4xl font-extrabold text-white">$0</span>
+              <span class="text-slate-400">/mes</span>
+            </div>
+            <ul class="space-y-4 mb-8 text-sm text-slate-300">
+              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Hasta 50 videos indexados</li>
+              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Captura vía VDO Ninja</li>
+              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Almacenamiento público (YouTube)</li>
+            </ul>
+            <button class="w-full py-3 rounded-lg bg-white/10 text-white font-medium hover:bg-white/20 transition-colors">Comenzar gratis</button>
+          </div>
+
+          <!-- Plan Institucional (Destacado) -->
+          <div class="rounded-2xl border border-blue-500 bg-blue-600/10 p-8 backdrop-blur-sm relative transform md:-translate-y-4 shadow-[0_0_30px_rgba(37,99,235,0.2)]">
+            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Más popular</div>
+            <h3 class="text-xl font-semibold text-white mb-2">Institucional</h3>
+            <p class="text-sm text-blue-200 mb-6">El sistema completo para universidades y bibliotecas.</p>
+            <div class="mb-6">
+              <span class="text-4xl font-extrabold text-white">$99</span>
+              <span class="text-slate-400">/mes</span>
+            </div>
+            <ul class="space-y-4 mb-8 text-sm text-slate-300">
+              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Subdominio personalizado</li>
+              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Metadata con Zenodo</li>
+              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> CDN Privado (Bunny.net)</li>
+              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Notas y transcripciones activas</li>
+            </ul>
+            <button class="w-full py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-500 transition-colors shadow-lg">Desplegar Videoteca</button>
+          </div>
+
+          <!-- Plan Avanzado -->
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+            <h3 class="text-xl font-semibold text-white mb-2">Avanzado</h3>
+            <p class="text-sm text-slate-400 mb-6">Para redes académicas y alto volumen de ingesta.</p>
+            <div class="mb-6">
+              <span class="text-4xl font-extrabold text-white">A medida</span>
+            </div>
+            <ul class="space-y-4 mb-8 text-sm text-slate-300">
+              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Almacenamiento ilimitado</li>
+              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Múltiples dominios</li>
+              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> API de ingesta personalizada</li>
+            </ul>
+            <button class="w-full py-3 rounded-lg bg-white/10 text-white font-medium hover:bg-white/20 transition-colors">Contactar ventas</button>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+	<!-- Pie de Página -->
+    <footer class="border-t border-white/5 bg-slate-950 py-12">
+      <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-4 gap-12 text-sm">
+        <div class="space-y-4">
+          <div class="text-xl font-bold tracking-tighter text-white">vteca<span class="text-blue-500">.</span></div>
+          <p class="text-slate-500">Preservando el conocimiento audiovisual para las instituciones del mañana.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-4">Producto</h4>
+          <ul class="space-y-2 text-slate-400">
+            <li><a href="#" class="hover:text-blue-400 transition-colors">Funcionalidades</a></li>
+            <li><a href="#" class="hover:text-blue-400 transition-colors">Seguridad</a></li>
+            <li><a href="#" class="hover:text-blue-400 transition-colors">Roadmap</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-4">Empresa</h4>
+          <ul class="space-y-2 text-slate-400">
+            <li><a href="#" class="hover:text-blue-400 transition-colors">Sobre nosotros</a></li>
+            <li><a href="#" class="hover:text-blue-400 transition-colors">Términos de servicio</a></li>
+            <li><a href="#" class="hover:text-blue-400 transition-colors">Privacidad</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-4">Contacto</h4>
+          <ul class="space-y-2 text-slate-400">
+            <li>contacto@vteca.lat</li>
+            <li>Arequipa, Perú</li>
+          </ul>
+        </div>
+      </div>
+      <div class="max-w-7xl mx-auto px-8 mt-12 pt-8 border-t border-white/5 text-center text-slate-600 text-xs">
+        © 2026 Vteca. Todos los derechos reservados.
+      </div>
+    </footer>
+
+    <!-- Estilos CSS para el efecto Glow de las tarjetas -->
+    <style>
+      .glow-card {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+      
+      .glow-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Este pseudo-elemento es la luz que sigue al ratón */
+      .glow-card::before {
+        content: "";
+        position: absolute;
+        top: var(--y, -100%);
+        left: var(--x, -100%);
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        transition: width 0.2s, height 0.2s;
+        z-index: 0;
+      }
+
+      .glow-card > * {
+        position: relative;
+        z-index: 1;
+      }
+    </style>
+
+    <!-- Script JavaScript para capturar la posición del ratón -->
+    <script>
+      const container = document.getElementById('mouse-tracker-container');
+      const cards = document.querySelectorAll('.glow-card');
+
+      container.addEventListener('mousemove', (e) => {
+        cards.forEach(card => {
+          // Calculamos la posición del ratón relativa a cada tarjeta
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          // Actualizamos las variables CSS
+          card.style.setProperty('--x', `${x}px`);
+          card.style.setProperty('--y', `${y}px`);
+        });
+      });
+    </script>
+
+  </body>
+</html>
