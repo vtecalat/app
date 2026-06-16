@@ -263,18 +263,21 @@ import '../styles/global.css';
       const container = document.getElementById('mouse-tracker-container');
       const cards = document.querySelectorAll('.glow-card');
 
-      container.addEventListener('mousemove', (e) => {
-        cards.forEach(card => {
-          // Calculamos la posición del ratón relativa a cada tarjeta
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          
-          // Actualizamos las variables CSS
-          card.style.setProperty('--x', `${x}px`);
-          card.style.setProperty('--y', `${y}px`);
+      if (container) {
+        container.addEventListener('mousemove', (e) => {
+          cards.forEach(card => {
+            // Validamos que el elemento sea un HTMLElement para que TypeScript nos permita modificar sus estilos
+            if (card instanceof HTMLElement) {
+              const rect = card.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              
+              card.style.setProperty('--x', `${x}px`);
+              card.style.setProperty('--y', `${y}px`);
+            }
+          });
         });
-      });
+      }
     </script>
 
   </body>
