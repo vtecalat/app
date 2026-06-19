@@ -24,22 +24,47 @@ import '../styles/global.css';
     <div class="relative z-10" id="mouse-tracker-container">
       
       <!-- Navegación Superior -->
-      <nav class="w-full flex justify-between items-center px-8 py-6 max-w-7xl mx-auto border-b border-white/5 backdrop-blur-md">
+      <nav class="relative w-full flex justify-between items-center px-8 py-6 max-w-7xl mx-auto border-b border-white/5 backdrop-blur-md z-50">
+        <!-- Logo -->
         <div class="text-2xl font-bold tracking-tighter text-white">
           vteca<span class="text-blue-500">.</span>
         </div>
+        
+        <!-- Enlaces Desktop -->
         <div class="hidden md:flex space-x-8">
           <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">La Videoteca</a>
           <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Casos de Uso</a>
           <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Precios</a>
         </div>
-        <div class="flex items-center space-x-4">
+        
+        <!-- Botones Desktop -->
+        <div class="hidden md:flex items-center space-x-4">
           <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Ingresar</a>
           <a href="#" class="text-sm font-medium px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors shadow-[0_0_20px_rgba(37,99,235,0.3)] border border-blue-500/50">
             Desplegar ahora
           </a>
         </div>
+
+        <!-- Botón Menú Móvil (Hamburguesa) -->
+        <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </nav>
+
+      <!-- Menú Móvil Desplegable (Oculto por defecto) -->
+      <div id="mobile-menu" class="hidden md:hidden absolute top-[80px] left-0 w-full bg-slate-950/98 border-b border-white/10 backdrop-blur-xl z-40 px-8 py-6 flex-col space-y-4 shadow-2xl">
+        <a href="#" class="block text-base font-medium text-slate-300 hover:text-white transition-colors">La Videoteca</a>
+        <a href="#" class="block text-base font-medium text-slate-300 hover:text-white transition-colors">Casos de Uso</a>
+        <a href="#" class="block text-base font-medium text-slate-300 hover:text-white transition-colors">Precios</a>
+        <div class="pt-4 border-t border-white/10 flex flex-col space-y-4">
+          <a href="#" class="text-center text-base font-medium text-slate-300 hover:text-white transition-colors">Ingresar</a>
+          <a href="#" class="text-center text-base font-medium px-5 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors shadow-[0_0_20px_rgba(37,99,235,0.3)] border border-blue-500/50">
+            Desplegar ahora
+          </a>
+        </div>
+      </div>
 
       <!-- Hero Section -->
       <main class="max-w-7xl mx-auto px-8 pt-20 pb-24 grid lg:grid-cols-2 gap-12 items-center">
@@ -258,24 +283,42 @@ import '../styles/global.css';
       }
     </style>
 
-    <!-- Script JavaScript para capturar la posición del ratón -->
+    <!-- Script JavaScript -->
     <script>
+      // --- Lógica del Mouse Tracking ---
       const container = document.getElementById('mouse-tracker-container');
       const cards = document.querySelectorAll('.glow-card');
 
       if (container) {
         container.addEventListener('mousemove', (e) => {
           cards.forEach(card => {
-            // Validamos que el elemento sea un HTMLElement para que TypeScript nos permita modificar sus estilos
             if (card instanceof HTMLElement) {
               const rect = card.getBoundingClientRect();
               const x = e.clientX - rect.left;
               const y = e.clientY - rect.top;
-              
               card.style.setProperty('--x', `${x}px`);
               card.style.setProperty('--y', `${y}px`);
             }
           });
+        });
+      }
+
+      // --- Lógica del Menú Móvil ---
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      const iconPath = document.getElementById('menu-icon-path');
+
+      if (btn && menu && iconPath) {
+        btn.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+          menu.classList.toggle('flex');
+          
+          // Cambiar icono de hamburguesa (tres rayas) a "X" (cerrar)
+          if (menu.classList.contains('hidden')) {
+            iconPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+          } else {
+            iconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+          }
         });
       }
     </script>
