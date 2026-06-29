@@ -6,46 +6,40 @@ import '../styles/global.css';
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>Vteca | Tu Videoteca Institucional Inteligente</title>
-    <!-- Script moderno para animaciones .lottie -->
-<script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" is:inline></script>
+    <title>Vteca | Archivo Multimedia Inteligente</title>
+    <!-- Script unificado para Lottie -->
+    <script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" is:inline></script>
   </head>
-  <body class="bg-slate-950 text-slate-50 font-sans antialiased selection:bg-blue-500/30 overflow-x-hidden">
+  <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-blue-500/30 overflow-x-hidden tracking-tight">
     
-    <!-- Fondo Animado Abstracto (Webflow Style) -->
-    <div class="fixed inset-0 z-0 pointer-events-none opacity-40">
-      <div class="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-blue-600/20 blur-[120px] animate-pulse"></div>
-      <div class="absolute bottom-[-20%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-indigo-600/20 blur-[120px] animate-pulse" style="animation-delay: 2s;"></div>
+    <!-- Background Glows Ultraligeros -->
+    <div class="fixed inset-0 z-0 pointer-events-none opacity-30">
+      <div class="absolute top-[-10%] left-[-20%] w-[60vw] h-[60vw] rounded-full bg-blue-900/30 blur-[140px]"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-indigo-900/20 blur-[140px]"></div>
     </div>
 
-    <!-- Contenedor principal con Z-index para estar sobre el fondo -->
     <div class="relative z-10" id="mouse-tracker-container">
       
-      <!-- Navegación Superior -->
-      <nav class="relative w-full flex justify-between items-center px-8 py-6 max-w-7xl mx-auto border-b border-white/5 backdrop-blur-md z-50">
-        <!-- Logo -->
-        <div class="text-2xl font-bold tracking-tighter text-white">
+      <!-- Navegación Minimalista -->
+      <nav class="relative w-full flex justify-between items-center px-8 py-8 max-w-7xl mx-auto border-b border-white/5 backdrop-blur-md z-50">
+        <div class="text-2xl font-black tracking-tighter text-white">
           vteca<span class="text-blue-500">.</span>
         </div>
         
-        <!-- Enlaces Desktop -->
-        <div class="hidden md:flex space-x-8">
-          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">La Videoteca</a>
-          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Casos de Uso</a>
-          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Precios</a>
+        <div class="hidden md:flex space-x-10 text-sm font-medium">
+          <a href="#problema" class="text-slate-400 hover:text-white transition-colors">El Reto</a>
+          <a href="#pilares" class="text-slate-400 hover:text-white transition-colors">Tecnología</a>
+          <a href="#ecosistema" class="text-slate-400 hover:text-white transition-colors">Modelos</a>
         </div>
         
-        <!-- Botones Desktop -->
-        <div class="hidden md:flex items-center space-x-4">
-          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Ingresar</a>
-          <a href="#" class="text-sm font-medium px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors shadow-[0_0_20px_rgba(37,99,235,0.3)] border border-blue-500/50">
-            Desplegar ahora
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="#consultoria" class="text-sm font-semibold px-5 py-3 bg-white text-slate-950 rounded-xl hover:bg-slate-200 transition-all shadow-lg">
+            Agendar Sesión
           </a>
         </div>
 
-        <!-- Botón Menú Móvil (Hamburguesa) -->
         <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path id="menu-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -53,227 +47,292 @@ import '../styles/global.css';
         </button>
       </nav>
 
-      <!-- Menú Móvil Desplegable (Oculto por defecto) -->
-      <div id="mobile-menu" class="hidden md:hidden absolute top-[80px] left-0 w-full bg-slate-950/98 border-b border-white/10 backdrop-blur-xl z-40 px-8 py-6 flex-col space-y-4 shadow-2xl">
-        <a href="#" class="block text-base font-medium text-slate-300 hover:text-white transition-colors">La Videoteca</a>
-        <a href="#" class="block text-base font-medium text-slate-300 hover:text-white transition-colors">Casos de Uso</a>
-        <a href="#" class="block text-base font-medium text-slate-300 hover:text-white transition-colors">Precios</a>
-        <div class="pt-4 border-t border-white/10 flex flex-col space-y-4">
-          <a href="#" class="text-center text-base font-medium text-slate-300 hover:text-white transition-colors">Ingresar</a>
-          <a href="#" class="text-center text-base font-medium px-5 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors shadow-[0_0_20px_rgba(37,99,235,0.3)] border border-blue-500/50">
-            Desplegar ahora
-          </a>
-        </div>
+      <!-- Menú Móvil -->
+      <div id="mobile-menu" class="hidden md:hidden absolute top-[88px] left-0 w-full bg-slate-950/98 border-b border-white/5 backdrop-blur-xl z-40 px-8 py-8 flex-col space-y-6 shadow-2xl">
+        <a href="#problema" class="block text-lg font-medium text-slate-300">El Reto</a>
+        <a href="#pilares" class="block text-lg font-medium text-slate-300">Tecnología</a>
+        <a href="#ecosistema" class="block text-lg font-medium text-slate-300">Modelos</a>
+        <a href="#consultoria" class="block text-center text-base font-semibold px-5 py-4 bg-blue-600 text-white rounded-xl">Agendar Sesión</a>
       </div>
 
-      <!-- Hero Section -->
-      <main class="max-w-7xl mx-auto px-8 pt-20 pb-24 grid lg:grid-cols-2 gap-12 items-center">
-        
-        <!-- Columna Izquierda: Copywriting -->
-        <div>
-          <div class="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-sm font-medium text-blue-300 mb-6 backdrop-blur-sm">
-            <span class="flex h-2 w-2 rounded-full bg-blue-400 mr-2 animate-ping"></span>
-            Nuevos conocimiento al servicio.
+      <!-- HERO: Impacto Inmediato -->
+      <header class="max-w-7xl mx-auto px-8 py-24 lg:py-36 grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-8">
+          <div class="inline-flex items-center rounded-full border border-blue-500/20 bg-blue-500/5 px-4 py-1.5 text-xs font-bold text-blue-400 tracking-widest uppercase">
+            Soberanía Audiovisual Institucional
           </div>
           
-          <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-balance leading-tight text-white">
-            Tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Videoteca</span> Institucional Inteligente
+          <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white leading-[1.05] text-balance">
+            El conocimiento de tu institución, <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-200 to-blue-500">en tu propio control.</span>
           </h1>
           
-          <p class="text-lg text-slate-400 max-w-xl mb-8 text-balance leading-relaxed">
-            Las plataformas tradicionales solo almacenan videos. Vteca te permite capturar conferencias, <strong class="text-slate-200">registrar metadatos académicos, categorizar e indexar</strong> todo tu acervo audiovisual en tu propio sistema.
+          <p class="text-lg md:text-xl text-slate-400 max-w-xl font-normal leading-relaxed text-balance">
+            Protege, indexa y comparte conferencias, clases magistrales y archivos multimedia sin anuncios, algoritmos comerciales ni fugas de propiedad intelectual.
           </p>
           
-          <div class="flex flex-col sm:flex-row gap-4">
-            <button class="px-8 py-4 bg-white text-slate-950 font-semibold rounded-xl shadow-lg hover:scale-105 transition-transform duration-200">
-              Crear mi Videoteca
-            </button>
-            <button class="px-8 py-4 bg-white/5 text-white font-semibold rounded-xl border border-white/10 hover:bg-white/10 transition-colors duration-200 backdrop-blur-sm">
-              Ver arquitectura
-            </button>
+          <div class="flex flex-col sm:flex-row gap-4 pt-4">
+            <a href="#consultoria" class="px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-500 transition-all text-center shadow-xl shadow-blue-600/20">
+              Iniciar Auditoría Gratuita
+            </a>
+            <a href="#problema" class="px-8 py-4 bg-white/5 text-slate-300 font-semibold rounded-xl border border-white/10 hover:bg-white/10 transition-colors text-center backdrop-blur-sm">
+              ¿Por qué evolucionar?
+            </a>
           </div>
         </div>
 
-        <!-- Columna Derecha: Animación Lottie (Formato .lottie) -->
-		<div class="relative w-full h-[400px] flex justify-center items-center rounded-2xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 backdrop-blur-md shadow-2xl overflow-hidden">
-		<dotlottie-player 
-			class="mix-blend-screen"
-			src="https://lottie.host/1ec6011c-1a99-4ef9-a419-1a13a6c5994e/RP9QyXa8JA.lottie" 
-			background="transparent" 
-			speed="1" 
-			style="width: 120%; height: 120%;" 
-			loop 
-			autoplay>
-		</dotlottie-player>
-		</div>
-
-      </main>
-
-      <!-- Sección de Características con Mouse Tracking -->
-      <section class="max-w-7xl mx-auto px-8 pb-32">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl font-bold text-white mb-4">El ciclo de vida del conocimiento</h2>
-          <p class="text-slate-400">Mucho más que un servicio VOD. Una solución integral para bibliotecas y universidades.</p>
+        <div class="lg:col-span-5 relative w-full h-[350px] lg:h-[450px] flex justify-center items-center rounded-3xl bg-slate-900/30 border border-white/5 shadow-2xl overflow-hidden">
+          <dotlottie-player class="mix-blend-screen" src="https://lottie.host/1ec6011c-1a99-4ef9-a419-1a13a6c5994e/RP9QyXa8JA.lottie" background="transparent" speed="0.8" style="width: 100%; height: 100%;" loop autoplay></dotlottie-player>
         </div>
+      </header>
 
-        <div class="grid md:grid-cols-3 gap-6">
+      <!-- PROBLEMA VS SOLUCIÓN: El Quiebre Visual -->
+      <section id="problema" class="max-w-7xl mx-auto px-8 py-32 border-t border-white/5">
+        <div class="grid lg:grid-cols-12 gap-16 items-center">
           
-          <!-- Card 1 -->
-          <div class="glow-card p-8 rounded-2xl">
-            <div class="h-12 w-12 rounded-lg bg-blue-500/20 border border-blue-500/50 flex items-center justify-center mb-6">
-              <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">Captura Universal</h3>
-            <p class="text-slate-400 text-sm">Integra desde smartphones hasta circuitos CCTV avanzados mediante tecnología WebRTC de ultrabaja latencia.</p>
+          <div class="lg:col-span-5 space-y-6">
+            <h2 class="text-xs font-bold text-rose-500 uppercase tracking-widest">El Conflicto Actual</h2>
+            <p class="text-4xl font-black text-white tracking-tight leading-tight">Drive y YouTube no son una biblioteca científica.</p>
+            <p class="text-slate-400 leading-relaxed">
+              Las carpetas ocultas entierran el conocimiento. Las plataformas públicas exponen a tus usuarios a publicidad distractores y arriesgan los derechos sobre tus investigaciones.
+            </p>
+            <div class="h-[200px] rounded-2xl bg-slate-900/20 border border-white/0 overflow-hidden flex items-center justify-center">
+            <!-- Aquí pegas el enlace de tu animación de alerta o datos -->
+            <dotlottie-player 
+              src="https://lottie.host/f7cee588-56f5-441f-82a1-c066bf1d5630/bLItW7Q4k3.lottie" 
+              background="transparent" 
+              speed="1" 
+              style="width: 100%; height: 100%;" 
+              loop 
+              autoplay>
+            </dotlottie-player>
+          </div>
           </div>
 
-          <!-- Card 2 -->
-          <div class="glow-card p-8 rounded-2xl">
-            <div class="h-12 w-12 rounded-lg bg-indigo-500/20 border border-indigo-500/50 flex items-center justify-center mb-6">
-              <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path></svg>
+          <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+            <div class="p-8 rounded-2xl bg-white/2 border border-white/5 space-y-4">
+              <div class="text-rose-400 font-bold text-sm uppercase tracking-wider flex items-center gap-2">✕ Infraestructura Pública</div>
+              <p class="text-slate-400 text-sm leading-relaxed">Publicidad externa, pérdida de exclusividad sobre el contenido y nula protección contra descargas piratas.</p>
             </div>
-            <h3 class="text-xl font-bold text-white mb-3">Indexación y Metadata</h3>
-            <p class="text-slate-400 text-sm">Clasifica cada audiovisual con rigor institucional. Generación de identificadores, catalogación de autores y conexión con Zenodo.</p>
-          </div>
+            
+            <div class="p-8 rounded-2xl bg-blue-950/20 border border-blue-500/20 space-y-4">
+              <div class="text-blue-400 font-bold text-sm uppercase tracking-wider flex items-center gap-2">✓ Entorno Vteca</div>
+              <p class="text-slate-300 text-sm leading-relaxed">Tu propio subdominio cifrado, libre de distracciones y con control perimetral absoluto de los archivos.</p>
+            </div>
 
-          <!-- Card 3 -->
-          <div class="glow-card p-8 rounded-2xl">
-            <div class="h-12 w-12 rounded-lg bg-purple-500/20 border border-purple-500/50 flex items-center justify-center mb-6">
-              <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+            <div class="p-8 rounded-2xl bg-white/2 border border-white/5 space-y-4">
+              <div class="text-rose-400 font-bold text-sm uppercase tracking-wider flex items-center gap-2">✕ Repositorios Ciegos</div>
+              <p class="text-slate-400 text-sm leading-relaxed">Videos e imágenes almacenados en carpetas compartidas sin estructura académica, imposibles de indexar o buscar.</p>
             </div>
-            <h3 class="text-xl font-bold text-white mb-3">Tu Propio Portal</h3>
-            <p class="text-slate-400 text-sm">Sirve el contenido a tu comunidad en un subdominio personalizado (tuinstitucion.vteca.lat) con controles de acceso privados.</p>
+
+            <div class="p-8 rounded-2xl bg-blue-950/20 border border-blue-500/20 space-y-4">
+              <div class="text-blue-400 font-bold text-sm uppercase tracking-wider flex items-center gap-2">✓ Rigor Académico Digital</div>
+              <p class="text-slate-300 text-sm leading-relaxed">Catalogación con metadatos estructurados, búsqueda interna inteligente y preservación institucional definitiva.</p>
+            </div>
           </div>
 
         </div>
       </section>
 
-	  <!-- Sección de Planes y Suscripciones -->
-      <section class="max-w-7xl mx-auto px-8 pb-32">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl font-bold text-white mb-4">Planes diseñados para cada institución</h2>
-          <p class="text-slate-400">Escala tu sistema de videoteca a medida que crece tu acervo audiovisual.</p>
+      <!-- CARACTERÍSTICAS: Cuadrícula Minimalista -->
+      <section id="pilares" class="max-w-7xl mx-auto px-8 py-32 bg-slate-950/40 border-t border-white/5">
+        <div class="max-w-3xl mb-20 space-y-4">
+          <h2 class="text-xs font-bold text-blue-500 uppercase tracking-widest">Ingeniería Audiovisual</h2>
+          <p class="text-4xl md:text-5xl font-black text-white tracking-tighter">Diseñado para la preservación multimedia</p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8">
           
-          <!-- Plan Gratuito (MVP) -->
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-            <h3 class="text-xl font-semibold text-white mb-2">Básico</h3>
-            <p class="text-sm text-slate-400 mb-6">Para proyectos iniciales y pruebas de concepto.</p>
-            <div class="mb-6">
-              <span class="text-4xl font-extrabold text-white">$0</span>
-              <span class="text-slate-400">/mes</span>
+          <!-- Card 1 -->
+          <div class="glow-card p-10 rounded-3xl border border-white/5 bg-white/2 space-y-6">
+            <div class="flex justify-between items-start">
+              <div class="h-12 w-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+              </div>
+              <span class="text-xs font-mono text-slate-600">01 / IA SEARCH</span>
             </div>
-            <ul class="space-y-4 mb-8 text-sm text-slate-300">
-              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Hasta 50 videos indexados</li>
-              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Captura vía VDO Ninja</li>
-              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Almacenamiento público (YouTube)</li>
-            </ul>
-            <button class="w-full py-3 rounded-lg bg-white/10 text-white font-medium hover:bg-white/20 transition-colors">Comenzar gratis</button>
+            <h3 class="text-2xl font-bold text-white tracking-tight">Búsqueda Profunda por Voz</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              El sistema transcribe automáticamente cada audio y video. Encuentra conceptos clave al instante y salta directo al segundo exacto donde fueron mencionados.
+            </p>
           </div>
 
-          <!-- Plan Institucional (Destacado) -->
-          <div class="rounded-2xl border border-blue-500 bg-blue-600/10 p-8 backdrop-blur-sm relative transform md:-translate-y-4 shadow-[0_0_30px_rgba(37,99,235,0.2)]">
-            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Más popular</div>
-            <h3 class="text-xl font-semibold text-white mb-2">Institucional</h3>
-            <p class="text-sm text-blue-200 mb-6">El sistema completo para universidades y bibliotecas.</p>
-            <div class="mb-6">
-              <span class="text-4xl font-extrabold text-white">$99</span>
-              <span class="text-slate-400">/mes</span>
+          <!-- Card 2 -->
+          <div class="glow-card p-10 rounded-3xl border border-white/5 bg-white/2 space-y-6">
+            <div class="flex justify-between items-start">
+              <div class="h-12 w-12 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+              </div>
+              <span class="text-xs font-mono text-slate-600">02 / SEGURIDAD</span>
             </div>
-            <ul class="space-y-4 mb-8 text-sm text-slate-300">
-              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Subdominio personalizado</li>
-              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Metadata con Zenodo</li>
-              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> CDN Privado (Bunny.net)</li>
-              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Notas y transcripciones activas</li>
-            </ul>
-            <button class="w-full py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-500 transition-colors shadow-lg">Desplegar Videoteca</button>
+            <h3 class="text-2xl font-bold text-white tracking-tight">Blindaje Anti-Piratería</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Protección de video mediante cifrado DRM avanzado para evitar descargas ilícitas, tokens seguros con vencimiento temporal y marcas de agua dinámicas para tus fotos fijas.
+            </p>
           </div>
 
-          <!-- Plan Avanzado -->
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-            <h3 class="text-xl font-semibold text-white mb-2">Avanzado</h3>
-            <p class="text-sm text-slate-400 mb-6">Para redes académicas y alto volumen de ingesta.</p>
-            <div class="mb-6">
-              <span class="text-4xl font-extrabold text-white">A medida</span>
+          <!-- Card 3 -->
+          <div class="glow-card p-10 rounded-3xl border border-white/5 bg-white/2 space-y-6">
+            <div class="flex justify-between items-start">
+              <div class="h-12 w-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M8 7h8m0 0v8a2 2 0 01-2 2h-6M9 17h6"></path></svg>
+              </div>
+              <span class="text-xs font-mono text-slate-600">03 / METADATA</span>
             </div>
-            <ul class="space-y-4 mb-8 text-sm text-slate-300">
-              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Almacenamiento ilimitado</li>
-              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Múltiples dominios</li>
-              <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> API de ingesta personalizada</li>
-            </ul>
-            <button class="w-full py-3 rounded-lg bg-white/10 text-white font-medium hover:bg-white/20 transition-colors">Contactar ventas</button>
+            <h3 class="text-2xl font-bold text-white tracking-tight">Gestión de Metadatos Clara</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Consola limpia para bibliotecarios y custodios. Organiza ponencias, tesis en video o galerías históricas bajo estrictas taxonomías institucionales.
+            </p>
           </div>
 
+          <!-- Card 4 -->
+          <div class="glow-card p-10 rounded-3xl border border-white/5 bg-white/2 space-y-6">
+            <div class="flex justify-between items-start">
+              <div class="h-12 w-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.89 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.89 8-4M4 7c0-2.21 3.582-4 8-4s8 1.89 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.89-8-4"></path></svg>
+              </div>
+              <span class="text-xs font-mono text-slate-600">04 / SOBERANÍA</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white tracking-tight">Gobernanza Absoluta</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Garantiza que el valor intelectual pertenezca por ley a tu entidad. Infraestructura libre de rastreadores comerciales, con opción de respaldos físicos locales.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- MODELOS DE DESPLIEGUE: Limpio y Espaciado -->
+      <section id="ecosistema" class="max-w-7xl mx-auto px-8 py-32 border-t border-white/5">
+        <div class="text-center max-w-2xl mx-auto mb-24 space-y-4">
+          <h2 class="text-xs font-bold text-blue-500 uppercase tracking-widest">Modelos de Despliegue</h2>
+          <p class="text-4xl font-black text-white tracking-tighter">Arquitectura escalable a medida</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+          
+          <!-- Modelo 1 -->
+          <div class="rounded-3xl border border-white/5 bg-slate-900/30 p-8 flex flex-col justify-between space-y-12">
+            <div class="space-y-6">
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Esquema 01</span>
+              <h3 class="text-2xl font-black text-white">100% Nube</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">Agilidad pura y cero infraestructura local. Hospedado en nuestra nube empresarial de alta velocidad con entrega global (CDN).</p>
+            </div>
+            <a href="#consultoria" class="w-full py-4 rounded-xl bg-white/5 hover:bg-white/10 text-white text-sm font-bold text-center border border-white/10 transition-colors">Cotizar Nube</a>
+          </div>
+
+          <!-- Modelo 2: Destacado -->
+          <div class="rounded-3xl border-2 border-blue-600 bg-gradient-to-b from-blue-950/20 to-slate-950 p-8 flex flex-col justify-between space-y-12 relative shadow-2xl">
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-4 py-0.5 rounded-full text-3xs font-black uppercase tracking-widest">Soberanía</div>
+            <div class="space-y-6">
+              <span class="text-xs font-bold uppercase tracking-widest text-blue-400">Esquema 02</span>
+              <h3 class="text-2xl font-black text-white">Infraestructura Híbrida</h3>
+              <p class="text-slate-300 text-sm leading-relaxed">Toda la potencia de nuestra nube enlazada a un servidor físico NAS corporativo (8TB a 16TB RAID) en tus instalaciones. Carga videos pesados a velocidad LAN local y sincroniza en segundo plano.</p>
+            </div>
+            <a href="#consultoria" class="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold text-center transition-all shadow-lg shadow-blue-600/20">Solicitar Híbrido</a>
+          </div>
+
+          <!-- Modelo 3 -->
+          <div class="rounded-3xl border border-white/5 bg-slate-900/30 p-8 flex flex-col justify-between space-y-12">
+            <div class="space-y-6">
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Esquema 03</span>
+              <h3 class="text-2xl font-black text-white">Enterprise / Redes</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">Despliegues masivos para consorcios universitarios o ministerios. APIs a medida, límites dedicados y encriptación avanzada frente a capturas de pantalla.</p>
+            </div>
+            <a href="#consultoria" class="w-full py-4 rounded-xl bg-white/5 hover:bg-white/10 text-white text-sm font-bold text-center border border-white/10 transition-colors">Diseñar Proyecto</a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- LEAD GEN: Formulario y Conexión Automática a WhatsApp -->
+      <section id="consultoria" class="max-w-3xl mx-auto px-8 py-32 border-t border-white/5">
+        <div class="bg-gradient-to-br from-slate-900/50 to-slate-950 p-8 md:p-12 rounded-3xl border border-white/5 relative shadow-2xl space-y-10">
+          
+          <div class="text-center space-y-4">
+            <h2 class="text-3xl font-black tracking-tight text-white">Hablemos de tu Infraestructura</h2>
+            <p class="text-sm text-slate-400 max-w-xl mx-auto leading-relaxed">
+              Completa el formulario institucional. Al presionar el botón, se estructurará tu solicitud y abrirá un canal directo con nuestra área técnica vía WhatsApp para coordinar los 60 minutos de consultoría especializada.
+            </p>
+          </div>
+
+          <form id="consultoria-form" class="space-y-6 max-w-md mx-auto">
+            <div class="space-y-2">
+              <label class="block text-2xs font-bold text-slate-400 uppercase tracking-widest">Nombre completo</label>
+              <input type="text" id="form-name" required class="w-full bg-slate-950/80 border border-white/5 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="Dr. Carlos Mendoza" />
+            </div>
+            
+            <div class="space-y-2">
+              <label class="block text-2xs font-bold text-slate-400 uppercase tracking-widest">Cargo Institucional</label>
+              <input type="text" id="form-role" required class="w-full bg-slate-950/80 border border-white/5 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="Director de TI / Biblioteca" />
+            </div>
+            
+            <div class="space-y-2">
+              <label class="block text-2xs font-bold text-slate-400 uppercase tracking-widest">Correo Institucional</label>
+              <input type="email" id="form-email" required class="w-full bg-slate-950/80 border border-white/5 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="c.mendoza@universidad.edu.pe" />
+            </div>
+
+            <div class="space-y-2">
+              <label class="block text-2xs font-bold text-slate-400 uppercase tracking-widest">Modelo de Interés</label>
+              <select id="form-model" class="w-full bg-slate-950 border border-white/5 rounded-xl px-4 py-3.5 text-sm text-slate-400 focus:outline-none focus:border-blue-500 transition-colors">
+                <option>Despliegue Digital Nube</option>
+                <option>Infraestructura Híbrida (NAS Local)</option>
+                <option>Enterprise / Redes de Universidades</option>
+                <option>Asesoría General de Arquitectura</option>
+              </select>
+            </div>
+
+            <button type="submit" class="w-full py-4 bg-white text-slate-950 font-bold rounded-xl shadow-xl hover:bg-slate-200 transition-all text-sm flex items-center justify-center gap-2">
+              <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 12.008 0c3.202.001 6.212 1.244 8.477 3.501 2.266 2.257 3.507 5.262 3.505 8.466-.005 6.657-5.34 12.008-11.952 12.008-.003 0-.006 0-.01 0-2.001-.001-3.969-.514-5.711-1.488L0 24zm6.39-4.847c1.677.995 3.325 1.52 5.61 1.52 5.405 0 9.799-4.393 9.802-9.799.002-2.618-1.01-5.08-2.859-6.932C17.144 2.091 14.69 1.079 12.01 1.079 6.605 1.079 2.21 5.473 2.207 10.879c-.001 2.146.545 3.946 1.583 5.738l-.999 3.649 3.654-.958z"/></svg>
+              Solicitar Consultoría
+            </button>
+          </form>
         </div>
       </section>
 
     </div>
 
-	<!-- Pie de Página -->
-    <footer class="border-t border-white/5 bg-slate-950 py-12">
-      <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-4 gap-12 text-sm">
-        <div class="space-y-4">
-          <div class="text-xl font-bold tracking-tighter text-white">vteca<span class="text-blue-500">.</span></div>
-          <p class="text-slate-500">Preservando el conocimiento audiovisual para las instituciones de hoy y mañana.</p>
+    <!-- Footer Corporativo Minimalista -->
+    <footer class="border-t border-white/5 bg-slate-950 py-16 relative z-10 text-xs text-slate-500">
+      <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-3">
+          <span class="text-lg font-black text-white tracking-tighter">vteca.</span>
+          <span>— Preservación Digital.</span>
+        </div>
+        <div class="flex space-x-6">
+          <a href="#" class="hover:text-white transition-colors">Soberanía de Datos</a>
+          <a href="#" class="hover:text-white transition-colors">Términos de Infraestructura</a>
         </div>
         <div>
-          <h4 class="font-bold text-white mb-4">Producto</h4>
-          <ul class="space-y-2 text-slate-400">
-            <li><a href="#" class="hover:text-blue-400 transition-colors">Funcionalidades</a></li>
-            <li><a href="#" class="hover:text-blue-400 transition-colors">Seguridad</a></li>
-            <li><a href="#" class="hover:text-blue-400 transition-colors">Roadmap</a></li>
-          </ul>
+          © 2026 Vteca. Todos los derechos reservados.
         </div>
-        <div>
-          <h4 class="font-bold text-white mb-4">Empresa</h4>
-          <ul class="space-y-2 text-slate-400">
-            <li><a href="#" class="hover:text-blue-400 transition-colors">Sobre nosotros</a></li>
-            <li><a href="#" class="hover:text-blue-400 transition-colors">Términos de servicio</a></li>
-            <li><a href="#" class="hover:text-blue-400 transition-colors">Privacidad</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-bold text-white mb-4">Contacto</h4>
-          <ul class="space-y-2 text-slate-400">
-            <li>contacto@vteca.lat</li>
-            <li>Arequipa, Perú</li>
-          </ul>
-        </div>
-      </div>
-      <div class="max-w-7xl mx-auto px-8 mt-12 pt-8 border-t border-white/5 text-center text-slate-600 text-xs">
-        © 2026 Vteca. Todos los derechos reservados.
       </div>
     </footer>
 
-    <!-- Estilos CSS para el efecto Glow de las tarjetas -->
+    <!-- Estilos CSS para el efecto Glow Interactivo -->
     <style>
       .glow-card {
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.01);
+        border: 1px solid rgba(255, 255, 255, 0.03);
         position: relative;
         overflow: hidden;
-        transition: transform 0.3s ease, border-color 0.3s ease;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
       }
       
       .glow-card:hover {
-        transform: translateY(-5px);
-        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-4px);
+        border-color: rgba(59, 130, 246, 0.2);
       }
 
-      /* Este pseudo-elemento es la luz que sigue al ratón */
       .glow-card::before {
         content: "";
         position: absolute;
         top: var(--y, -100%);
         left: var(--x, -100%);
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 75%);
         transform: translate(-50%, -50%);
         pointer-events: none;
-        transition: width 0.2s, height 0.2s;
         z-index: 0;
       }
 
@@ -283,9 +342,9 @@ import '../styles/global.css';
       }
     </style>
 
-    <!-- Script JavaScript -->
+    <!-- Script JavaScript para Interactividad y WhatsApp Enrutado -->
     <script>
-      // --- Lógica del Mouse Tracking ---
+      // --- Mouse Tracking para Efecto Premium ---
       const container = document.getElementById('mouse-tracker-container');
       const cards = document.querySelectorAll('.glow-card');
 
@@ -303,7 +362,7 @@ import '../styles/global.css';
         });
       }
 
-      // --- Lógica del Menú Móvil ---
+      // --- Menú Móvil ---
       const btn = document.getElementById('mobile-menu-btn');
       const menu = document.getElementById('mobile-menu');
       const iconPath = document.getElementById('menu-icon-path');
@@ -313,12 +372,40 @@ import '../styles/global.css';
           menu.classList.toggle('hidden');
           menu.classList.toggle('flex');
           
-          // Cambiar icono de hamburguesa (tres rayas) a "X" (cerrar)
           if (menu.classList.contains('hidden')) {
             iconPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
           } else {
             iconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12');
           }
+        });
+      }
+
+      // --- Procesamiento de Formulario e Ingesta a WhatsApp API ---
+      const form = document.getElementById('consultoria-form');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          
+          // Obtener los valores de los elementos de forma segura
+          const name = (document.getElementById('form-name') as HTMLInputElement)?.value || '';
+          const role = (document.getElementById('form-role') as HTMLInputElement)?.value || '';
+          const email = (document.getElementById('form-email') as HTMLInputElement)?.value || '';
+          const model = (document.getElementById('form-model') as HTMLSelectElement)?.value || '';
+          
+          // Construir el mensaje de forma legible para el operador técnico
+          const baseText = `Hola, vengo de la Landing de Vteca. Deseo agendar la sesión técnica de 60 minutos.
+
+*Detalles institucionales:*
+• Nombre: ${name}
+• Cargo: ${role}
+• Correo: ${email}
+• Modelo de Interés: ${model}`;
+
+          // Codificar el texto para URL
+          const encodedText = encodeURIComponent(baseText);
+          
+          // Redireccionar al API de WhatsApp
+          window.open(`https://wa.me/51993118573?text=${encodedText}`, '_blank');
         });
       }
     </script>
