@@ -1,0 +1,51 @@
+---
+import DashboardLayout from '../../layouts/DashboardLayout.astro';
+---
+
+<DashboardLayout title="Configurar Sesión">
+    <div class="max-w-4xl mx-auto">
+        <header class="mb-8">
+            <h1 class="text-3xl font-black text-white">Editor</h1>
+            <p class="text-slate-400">Define los parámetros de tu evento y conecta la ingesta.</p>
+        </header>
+
+        <form id="session-form" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="space-y-6">
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-xl">
+                    <h3 class="text-white font-bold mb-4">Información del Evento</h3>
+                    <div class="space-y-4">
+                        <input type="text" id="session-title" required placeholder="Título de la sesión" class="w-full bg-slate-950 p-3 rounded-xl border border-slate-700 text-white" />
+                        <textarea id="session-desc" placeholder="Descripción breve" class="w-full bg-slate-950 p-3 rounded-xl border border-slate-700 text-white h-24"></textarea>
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="datetime-local" id="session-start" required class="bg-slate-950 p-3 rounded-xl border border-slate-700 text-white" />
+                            <select id="session-category" class="bg-slate-950 p-3 rounded-xl border border-slate-700 text-white">
+                                <option value="academic">Académico</option>
+                                <option value="workshop">Taller</option>
+                                <option value="debate">Debate</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-xl">
+                    <h3 class="text-white font-bold mb-4">Motor de Transmisión</h3>
+                    <select id="platform-provider" class="w-full bg-slate-950 p-3 rounded-xl border border-slate-700 text-white mb-4">
+                        <option value="vdo_ninja">EPT Live (VDO Ninja)</option>
+                        <option value="youtube">YouTube Live (Canal Externo)</option>
+                    </select>
+                    <div id="dynamic-fields" class="space-y-4 pt-4 border-t border-slate-800"></div>
+                </div>
+                <button type="submit" id="btn-save" class="w-full bg-emerald-600 hover:bg-emerald-500 py-3 rounded-xl font-bold text-white transition-all shadow-lg">
+                    Guardar y Generar Sala
+                </button>
+            </div>
+        </form>
+    </div>
+</DashboardLayout>
+
+<script>
+    import { SessionController } from '../../logic/sessionController.js';
+    new SessionController().init();
+</script>

@@ -24,6 +24,12 @@ export class SessionController {
                     <input type="text" id="platform-id" class="w-full bg-slate-950 p-3 rounded-xl border border-slate-700 text-white" placeholder="Ej: dQw4w9WgXcQ">
                 </div>
             `;
+        } else {
+            this.dynamicFields.innerHTML = `
+                <p class="text-sm text-emerald-400 bg-emerald-900/20 p-3 rounded-lg border border-emerald-800">
+                    <i class="fa-solid fa-circle-check"></i> Vteca Live: Sala privada y enlaces de control generados automáticamente.
+                </p>
+            `;
         }
     }
 

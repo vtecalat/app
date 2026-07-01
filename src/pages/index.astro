@@ -9,12 +9,10 @@ import '../styles/global.css';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <title>Vteca | Archivo Multimedia Inteligente</title>
-    <!-- Script unificado para Lottie -->
     <script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" is:inline></script>
   </head>
   <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-blue-500/30 overflow-x-hidden tracking-tight">
     
-    <!-- Background Glows Ultraligeros -->
     <div class="fixed inset-0 z-0 pointer-events-none opacity-30">
       <div class="absolute top-[-10%] left-[-20%] w-[60vw] h-[60vw] rounded-full bg-blue-900/30 blur-[140px]"></div>
       <div class="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-indigo-900/20 blur-[140px]"></div>
@@ -22,7 +20,6 @@ import '../styles/global.css';
 
     <div class="relative z-10" id="mouse-tracker-container">
       
-      <!-- Navegación Minimalista -->
       <nav class="relative w-full flex justify-between items-center px-8 py-8 max-w-7xl mx-auto border-b border-white/5 backdrop-blur-md z-50">
         <div class="text-2xl font-black tracking-tighter text-white">
           vteca<span class="text-blue-500">.</span>
@@ -47,7 +44,6 @@ import '../styles/global.css';
         </button>
       </nav>
 
-      <!-- Menú Móvil -->
       <div id="mobile-menu" class="hidden md:hidden absolute top-[88px] left-0 w-full bg-slate-950/98 border-b border-white/5 backdrop-blur-xl z-40 px-8 py-8 flex-col space-y-6 shadow-2xl">
         <a href="#problema" class="block text-lg font-medium text-slate-300">El Reto</a>
         <a href="#pilares" class="block text-lg font-medium text-slate-300">Tecnología</a>
@@ -55,7 +51,6 @@ import '../styles/global.css';
         <a href="#consultoria" class="block text-center text-base font-semibold px-5 py-4 bg-blue-600 text-white rounded-xl">Agendar Sesión</a>
       </div>
 
-      <!-- HERO: Impacto Inmediato -->
       <header class="max-w-7xl mx-auto px-8 py-24 lg:py-36 grid lg:grid-cols-12 gap-12 items-center">
         <div class="lg:col-span-7 space-y-8">
           <div class="inline-flex items-center rounded-full border border-blue-500/20 bg-blue-500/5 px-4 py-1.5 text-xs font-bold text-blue-400 tracking-widest uppercase">
@@ -85,7 +80,6 @@ import '../styles/global.css';
         </div>
       </header>
 
-      <!-- PROBLEMA VS SOLUCIÓN: El Quiebre Visual -->
       <section id="problema" class="max-w-7xl mx-auto px-8 py-32 border-t border-white/5">
         <div class="grid lg:grid-cols-12 gap-16 items-center">
           
@@ -96,12 +90,11 @@ import '../styles/global.css';
               Las carpetas ocultas entierran el conocimiento. Las plataformas públicas exponen a tus usuarios a publicidad distractores y arriesgan los derechos sobre tus investigaciones.
             </p>
             <div class="h-[200px] rounded-2xl bg-slate-900/20 border border-white/0 overflow-hidden flex items-center justify-center">
-            <!-- Aquí pegas el enlace de tu animación de alerta o datos -->
             <dotlottie-player 
               src="https://lottie.host/f7cee588-56f5-441f-82a1-c066bf1d5630/bLItW7Q4k3.lottie" 
               background="transparent" 
               speed="1" 
-              style="width: 100%; height: 100%;" 
+              style="width: 100%; height: 100%;"
               loop 
               autoplay>
             </dotlottie-player>
@@ -133,7 +126,6 @@ import '../styles/global.css';
         </div>
       </section>
 
-      <!-- CARACTERÍSTICAS: Cuadrícula Minimalista -->
       <section id="pilares" class="max-w-7xl mx-auto px-8 py-32 bg-slate-950/40 border-t border-white/5">
         <div class="max-w-3xl mb-20 space-y-4">
           <h2 class="text-xs font-bold text-blue-500 uppercase tracking-widest">Ingeniería Audiovisual</h2>
@@ -142,7 +134,6 @@ import '../styles/global.css';
 
         <div class="grid md:grid-cols-2 gap-8">
           
-          <!-- Card 1 -->
           <div class="glow-card p-10 rounded-3xl border border-white/5 bg-white/2 space-y-6">
             <div class="flex justify-between items-start">
               <div class="h-12 w-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
@@ -156,7 +147,6 @@ import '../styles/global.css';
             </p>
           </div>
 
-          <!-- Card 2 -->
           <div class="glow-card p-10 rounded-3xl border border-white/5 bg-white/2 space-y-6">
             <div class="flex justify-between items-start">
               <div class="h-12 w-12 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400">
@@ -170,7 +160,6 @@ import '../styles/global.css';
             </p>
           </div>
 
-          <!-- Card 3 -->
           <div class="glow-card p-10 rounded-3xl border border-white/5 bg-white/2 space-y-6">
             <div class="flex justify-between items-start">
               <div class="h-12 w-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
@@ -184,7 +173,6 @@ import '../styles/global.css';
             </p>
           </div>
 
-          <!-- Card 4 -->
           <div class="glow-card p-10 rounded-3xl border border-white/5 bg-white/2 space-y-6">
             <div class="flex justify-between items-start">
               <div class="h-12 w-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
@@ -201,7 +189,6 @@ import '../styles/global.css';
         </div>
       </section>
 
-      <!-- MODELOS DE DESPLIEGUE: Limpio y Espaciado -->
       <section id="ecosistema" class="max-w-7xl mx-auto px-8 py-32 border-t border-white/5">
         <div class="text-center max-w-2xl mx-auto mb-24 space-y-4">
           <h2 class="text-xs font-bold text-blue-500 uppercase tracking-widest">Modelos de Despliegue</h2>
@@ -210,7 +197,6 @@ import '../styles/global.css';
 
         <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
           
-          <!-- Modelo 1 -->
           <div class="rounded-3xl border border-white/5 bg-slate-900/30 p-8 flex flex-col justify-between space-y-12">
             <div class="space-y-6">
               <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Esquema 01</span>
@@ -220,7 +206,6 @@ import '../styles/global.css';
             <a href="#consultoria" class="w-full py-4 rounded-xl bg-white/5 hover:bg-white/10 text-white text-sm font-bold text-center border border-white/10 transition-colors">Cotizar Nube</a>
           </div>
 
-          <!-- Modelo 2: Destacado -->
           <div class="rounded-3xl border-2 border-blue-600 bg-gradient-to-b from-blue-950/20 to-slate-950 p-8 flex flex-col justify-between space-y-12 relative shadow-2xl">
             <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-4 py-0.5 rounded-full text-3xs font-black uppercase tracking-widest">Soberanía</div>
             <div class="space-y-6">
@@ -231,7 +216,6 @@ import '../styles/global.css';
             <a href="#consultoria" class="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold text-center transition-all shadow-lg shadow-blue-600/20">Solicitar Híbrido</a>
           </div>
 
-          <!-- Modelo 3 -->
           <div class="rounded-3xl border border-white/5 bg-slate-900/30 p-8 flex flex-col justify-between space-y-12">
             <div class="space-y-6">
               <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Esquema 03</span>
@@ -244,7 +228,6 @@ import '../styles/global.css';
         </div>
       </section>
 
-      <!-- LEAD GEN: Formulario y Conexión Automática a WhatsApp -->
       <section id="consultoria" class="max-w-3xl mx-auto px-8 py-32 border-t border-white/5">
         <div class="bg-gradient-to-br from-slate-900/50 to-slate-950 p-8 md:p-12 rounded-3xl border border-white/5 relative shadow-2xl space-y-10">
           
@@ -291,7 +274,6 @@ import '../styles/global.css';
 
     </div>
 
-    <!-- Footer Corporativo Minimalista -->
     <footer class="border-t border-white/5 bg-slate-950 py-16 relative z-10 text-xs text-slate-500">
       <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="flex items-center gap-3">
@@ -308,7 +290,6 @@ import '../styles/global.css';
       </div>
     </footer>
 
-    <!-- Estilos CSS para el efecto Glow Interactivo -->
     <style>
       .glow-card {
         background: rgba(255, 255, 255, 0.01);
@@ -342,7 +323,6 @@ import '../styles/global.css';
       }
     </style>
 
-    <!-- Script JavaScript para Interactividad y WhatsApp Enrutado -->
     <script>
       // --- Mouse Tracking para Efecto Premium ---
       const container = document.getElementById('mouse-tracker-container');
@@ -393,13 +373,7 @@ import '../styles/global.css';
           const model = (document.getElementById('form-model') as HTMLSelectElement)?.value || '';
           
           // Construir el mensaje de forma legible para el operador técnico
-          const baseText = `Hola, vengo de la Landing de Vteca. Deseo agendar la sesión técnica de 60 minutos.
-
-*Detalles institucionales:*
-• Nombre: ${name}
-• Cargo: ${role}
-• Correo: ${email}
-• Modelo de Interés: ${model}`;
+          const baseText = `Hola, vengo de la Landing de Vteca. Deseo agendar la sesión técnica de 60 minutos.\n\n*Detalles institucionales:*\n• Nombre: ${name}\n• Cargo: ${role}\n• Correo: ${email}\n• Modelo de Interés: ${model}`;
 
           // Codificar el texto para URL
           const encodedText = encodeURIComponent(baseText);
