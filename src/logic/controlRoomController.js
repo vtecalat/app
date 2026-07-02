@@ -81,7 +81,7 @@ export class ControlRoomController {
             const roomName = urlObj.searchParams.get('room');
             
             // Monitor con dominio estable
-            const monitorUrl = `https://vdo.ninja/?scene=0&layout&remote&showlabels&room=${roomName}`;
+            const monitorUrl = `https://vdo.ninja/?scene=0&room=${roomName}`;
             monitorIframe.src = monitorUrl;
 
             // Mostramos el Panel del Director
